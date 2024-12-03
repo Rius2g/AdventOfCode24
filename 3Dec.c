@@ -32,12 +32,10 @@ int main(){
                     if (fgetc(fp) == '\'' && fgetc(fp) == 't' && 
                         fgetc(fp) == '(' && fgetc(fp) == ')') {
                         enabled = false;
-                        printf("Disabled multiplications\n");
                     }
                 }
                 else if (next == '(' && fgetc(fp) == ')') {  // do()
                     enabled = true;
-                    printf("Enabled multiplications\n");
                 }
             }
             continue;
@@ -70,13 +68,11 @@ int main(){
 
         // Only add if enabled
         if (!enabled) {
-            printf("Disabled: mul(%d,%d)\n", x, y);
             continue;
         }
 
         // Valid multiplication found
         result += mul(x, y);
-        printf("Valid: mul(%d,%d) = %d\n", x, y, mul(x, y));
     }
    
 
